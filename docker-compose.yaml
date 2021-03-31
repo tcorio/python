@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  python:
+    build: docker
+    working_dir: /home/python
+    tty: true
+    stdin_open: true
+    user: python
+    entrypoint: python
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/home/python
+
+  pip:
+    build: docker
+    working_dir: /home/python
+    tty: true
+    stdin_open: true
+    user: python
+    entrypoint: pip
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/home/python
